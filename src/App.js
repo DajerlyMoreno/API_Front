@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-//import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard';
 //import Login from './pages/Login';
 import EmployeesList from './pages/EmployeesList';
 import EmployeeForm from './pages/EmployeeForm';
@@ -14,6 +14,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path='/dashboard' element={<Dashboard/>}></Route>
         <Route path="/employees" element={<EmployeesList />} /> 
         <Route path="/employees/create" element={<EmployeeForm />} />
       </Routes>
