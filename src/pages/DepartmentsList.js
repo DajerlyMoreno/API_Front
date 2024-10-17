@@ -49,8 +49,8 @@ const DepartmentsList = () => {
               <td>{department.name}</td>
               <td>{department.numEmployees}</td>
               <td>
-                <Link to={`/departments/${department.id}`} className="btn btn-primary btn-sm">Ver</Link>
-                <Link to={`/departments/edit/${department.id}`} className="btn btn-warning btn-sm mx-2">Editar</Link>
+                <Link to={`/departments/${department._id}`} className="btn btn-primary btn-sm">Ver</Link>
+                <Link to={`/departments/edit/${department._id}`} className="btn btn-warning btn-sm mx-2">Editar</Link>
               </td>
             </tr>
           ))}

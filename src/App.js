@@ -11,6 +11,7 @@ import EmployeeEditForm from './pages/EmployeeEditForm';
 //import EmployeeDetail from './pages/EmployeeDetail';
 import DepartmentsList from './pages/DepartmentsList';
 import DepartmentForm from './pages/DepartmentForm';
+import DepartmentEditForm from './pages/DepartmentEditForm';
 //import DepartmentDetail from './pages/DepartmentDetail';
 //import NotFound from './pages/NotFound';
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/employees" element={<EmployeesList />} /> 
         <Route path="/employees/create" element={<EmployeeForm />} />
         <Route path="/employees/edit/:id" element={<EmployeeEditForm />} />
+        <Route path="/departments/edit/:id" element={<DepartmentEditForm />} />
         <Route path="/departments" element={<DepartmentsList />} />
         <Route path="/departments/create" element={<DepartmentForm />} />
         <Route path="/login" element={<Login />} />
