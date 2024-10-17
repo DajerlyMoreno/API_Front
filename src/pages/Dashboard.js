@@ -1,21 +1,40 @@
-
-import React, { useState } from 'react';
+import React, { useState,  useContext } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import EmployeesList from './EmployeesList';
+import EmployeeForm from './EmployeeForm';
+import { AuthContext } from '../context/authContext';
 import '../styles/Dashboard.css';
-import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const [activeComponent, setActiveComponent] = useState('dashboard');
-
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
+  const [showForm, setShowForm] = useState(false);
+
   const handleLogout = () => {
-    navigate('/'); 
+    logout();
+    navigate('/');
+  };
+
+  const toggleForm = () => {
+    setShowForm(!showForm); 
   };
 
   const renderContent = () => {
     switch (activeComponent) {
       case 'employees':
-        return <EmployeesList />;
+        return (
+          <>
+            <div className="d-flex justify-content-between align-items-center mb-4">
+              <h1 className="text-center">Empleados</h1>
+              <button onClick={toggleForm} className="btn btn-success custom-btn-width">
+                {showForm ? 'Volver a la lista' : 'Agregar Empleado'}
+              </button>
+            </div>
+            <div className="dashboard-content">
+              {showForm ? <EmployeeForm /> : <EmployeesList />}
+            </div>
+          </>);
       case 'departments':
         return <h2>Sección de Departamentos (aún no implementada)</h2>;
       case 'dashboard':
