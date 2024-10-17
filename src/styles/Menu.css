@@ -1,0 +1,27 @@
+
+.navbar {
+  background: linear-gradient(90deg, #2e3b4e, #cbcbcb); 
+  padding: 15px 20px;
+}
+
+.company-logo {
+  width: 50px;
+  height: auto;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  margin-left: 20px;
+  color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0056b3; 
+}
+
+.navbar-brand img {
+  max-height: 50px;
+}
+
+
+  
