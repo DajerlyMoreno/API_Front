@@ -5,10 +5,12 @@ import axios from 'axios';
 const DepartmentDetail = () => {
   const { id } = useParams(); // Obtener el ID del departamento de la URL
   const [department, setDepartment] = useState(null); // Estado para almacenar los datos del departamento
+  const [totalSalary, setTotalSalary] = useState(null); // Estado para almacenar el salario total
   const [error, setError] = useState(null); // Estado para manejar errores
   const navigate = useNavigate(); // Inicializar useNavigate aquí
 
   useEffect(() => {
+    // Función para obtener los detalles del departamento
     const fetchDepartmentDetails = async () => {
       console.log(`Fetching details for department ID: ${id}`); // Log para verificar el ID
       try {
@@ -25,7 +27,26 @@ const DepartmentDetail = () => {
       }
     };
 
+    // Función para obtener el salario total del departamento
+    const fetchTotalSalary = async () => {
+      console.log(`Fetching total salary for department ID: ${id}`);
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/departments/${id}/salary`);
+        console.log("Salary response from API:", response.data); // Log de la respuesta completa
+        if (response.data.state === "Salarios calculados con éxito") {
+          setTotalSalary(response.data.totalSalary);
+        } else {
+          setError('No se pudo calcular el salario total');
+        }
+      } catch (error) {
+        setError('Error al calcular el salario total');
+        console.error('Error al calcular el salario total:', error);
+      }
+    };
+
+    // Llamar a las funciones para obtener los datos
     fetchDepartmentDetails();
+    fetchTotalSalary();
   }, [id]);
 
   // Si hay un error, mostrarlo
@@ -46,6 +67,8 @@ const DepartmentDetail = () => {
           <h5 className="card-title">Nombre: {department.name}</h5>
           <p className="card-text">ID: {department.id}</p>
           <p className="card-text">Número de Empleados: {department.numEmployees}</p>
+          <h6>Salario total del departamento:</h6>
+          <p>{totalSalary ? `$${totalSalary}` : 'Calculando...'}</p>
           
           <h6>Empleados:</h6>
           <table className="table table-striped">
@@ -68,6 +91,8 @@ const DepartmentDetail = () => {
               ))}
             </tbody>
           </table>
+
+          
 
           <button className="btn btn-primary" onClick={() => navigate(-1)}>Volver</button>
         </div>
