@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react'; // Asegúrate de importar useContext
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { AuthContext } from '../context/authContext'; // Importa AuthContext
 import '../styles/Login.css'; 
 
 const Login = () => {
   const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [error, setError] = useState(null);
+  const { setIsAuthenticated } = useContext(AuthContext); 
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     const credentials = { id, name };
     try {
-      
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/loging`, credentials);
       const data = response.data;
-      if (response.status === 200 && data !== "Credenciales invalidas") {
-        localStorage.setItem('token', data);
 
+      if (response.status === 200) {
+        localStorage.setItem('token', data);
+        setIsAuthenticated(true);
         navigate('/dashboard');
       } else {
         setError(data);

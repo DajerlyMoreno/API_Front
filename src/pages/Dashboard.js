@@ -1,15 +1,17 @@
-
-import React, { useState } from 'react';
-import EmployeesList from './EmployeesList';
-import '../styles/Dashboard.css';
+import React, { useState,  useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import EmployeesList from './EmployeesList';
+import { AuthContext } from '../context/authContext';
+import '../styles/Dashboard.css';
 
 const Dashboard = () => {
   const [activeComponent, setActiveComponent] = useState('dashboard');
-
   const navigate = useNavigate();
+  const { logout } = useContext(AuthContext);
+
   const handleLogout = () => {
-    navigate('/'); 
+    logout();
+    navigate('/');
   };
 
   const renderContent = () => {

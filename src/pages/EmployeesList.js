@@ -8,20 +8,24 @@ const EmployeesList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/employees`)
-      .then(response => {
+    const fetchEmployees = async () => {
+      try {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/employees`);
         if (response.data.state && Array.isArray(response.data.data)) {
-
           setEmployees(response.data.data);
-
         } else {
           setError('La respuesta de la API no es válida');
         }
-      })
-      .catch(error => {
+      } catch (error) {
         setError('Error al obtener los empleados');
         console.error("Error al obtener los empleados:", error);
-      });
+      }
+    };
+  
+    fetchEmployees();
+    return () => {
+      setEmployees([]); 
+    };
   }, []);
 
   if (error) {

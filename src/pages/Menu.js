@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext  } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/authContext';
 import '../styles/Menu.css'; 
 
 const Menu = () => {
+  const { isAuthenticated } = useContext(AuthContext);
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
@@ -20,12 +23,24 @@ const Menu = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/">Home</Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/departments">Departamentos</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">Iniciar Sesión</Link>
-            </li>
+            
+            {isAuthenticated ? (
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                </li>
+              </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/departments">Departamentos</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/login">Iniciar Sesión</Link>
+                  </li>
+                </>
+            )}
+            
           </ul>
         </div>
       </div>

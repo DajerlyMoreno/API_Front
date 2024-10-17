@@ -1,11 +1,10 @@
 import React from 'react';
-import '../styles/Home.css'; // Estilos personalizados para la página Home
+import '../styles/Home.css';
 
 const Home = () => {
   return (
     <div className="container mt-5">
       <div className="row align-items-center">
-        {/* Columna para el texto */}
         <div className="col-md-6">
           <h1 className="company-name">PULSEbyte</h1>
           <p className="company-description">
@@ -13,7 +12,6 @@ const Home = () => {
           </p>
         </div>
 
-        {/* Columna para la imagen */}
         <div className="col-md-6 text-center">
           <img src="/assets/logo.jpg" alt="Empresa Ficticia" className="img-fluid" />
         </div>
