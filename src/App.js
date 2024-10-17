@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import Login from './pages/Login';
 import EmployeesList from './pages/EmployeesList';
 import EmployeeForm from './pages/EmployeeForm';
+import EmployeeEditForm from './pages/EmployeeEditForm';
 //import EmployeeDetail from './pages/EmployeeDetail';
 import DepartmentsList from './pages/DepartmentsList';
 import DepartmentForm from './pages/DepartmentForm';
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route path="/employees" element={<EmployeesList />} /> 
         <Route path="/employees/create" element={<EmployeeForm />} />
-        <Route path="/employees/edit/:id" element={<EmployeeForm />} />
+        <Route path="/employees/edit/:id" element={<EmployeeEditForm />} />
         <Route path="/departments" element={<DepartmentsList />} />
         <Route path="/departments/create" element={<DepartmentForm />} />
       </Routes>
