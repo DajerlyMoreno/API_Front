@@ -13,3 +13,15 @@ export const getEmployeeById = async (id) => {
 export const createEmployee = async (employeeData) => {
   return await axios.post(`${API_URL}/employees`, employeeData);
 };
+
+export const getDepartments = async () => {
+  return await axios.get(`${API_URL}/departments`);
+};
+
+export const getDepartmentById = async (id) => {
+  return await axios.get(`${API_URL}/departments/${id}`);
+};
+
+export const createDepartment = async (departmentData) => {
+  return await axios.post(`${API_URL}/departments`, departmentData);
+};
