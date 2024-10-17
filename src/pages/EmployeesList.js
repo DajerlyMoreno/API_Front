@@ -3,14 +3,14 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const EmployeesList = () => {
-  const [employees, setEmployees] = useState([]);  // Inicializar como array vacío
-  const [error, setError] = useState(null);  // Estado para manejar errores
+  const [employees, setEmployees] = useState([]); 
+  const [error, setError] = useState(null);  
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/employees`)
       .then(response => {
         if (response.data.state && Array.isArray(response.data.data)) {
-          setEmployees(response.data.data);  // Establecer el array de empleados
+          setEmployees(response.data.data);  
         } else {
           setError('La respuesta de la API no es válida');
         }
