@@ -40,7 +40,7 @@ const EmployeeEditForm = () => {
     e.preventDefault();
     // Actualizar el empleado usando PUT
     axios.put(`${process.env.REACT_APP_API_URL}/employees/${id}`, employee)
-      .then(() => navigate('/employees')) // Redirigir a la lista de empleados después de la actualización
+      .then(() => navigate('/dashboard')) // Redirigir a la lista de empleados después de la actualización
       .catch(error => {
         console.error('Error al actualizar el empleado:', error);
       });

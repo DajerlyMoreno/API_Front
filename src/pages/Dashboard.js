@@ -1,7 +1,9 @@
 import React, { useState,  useContext } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import EmployeesList from './EmployeesList';
 import EmployeeForm from './EmployeeForm';
+import DepartmentsList from './DepartmentsList';
+import DepartmentForm from './DepartmentForm';
 import { AuthContext } from '../context/authContext';
 import '../styles/Dashboard.css';
 
@@ -36,7 +38,18 @@ const Dashboard = () => {
             </div>
           </>);
       case 'departments':
-        return <h2>Sección de Departamentos (aún no implementada)</h2>;
+        return (
+          <>
+            <div className="d-flex justify-content-between align-items-center mb-4">
+              <h1 className="text-center">Departamentos</h1>
+              <button onClick={toggleForm} className="btn btn-success custom-btn-width">
+                {showForm ? 'Volver a la lista' : 'Agregar Departamento'}
+              </button>
+            </div>
+            <div className="dashboard-content">
+              {showForm ? <DepartmentForm /> : <DepartmentsList />}
+            </div>
+          </>);
       case 'dashboard':
         return (
           <div>
@@ -94,7 +107,6 @@ const Dashboard = () => {
 
       <div className="main-content">
         <header className="header">
-          <input type="text" placeholder="Buscar..." />
           <div className="user-info">
             <i className="icon-user" />
           </div>

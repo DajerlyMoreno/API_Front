@@ -33,9 +33,6 @@ const Menu = () => {
               ) : (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" to="/departments">Departamentos</Link>
-                  </li>
-                  <li className="nav-item">
                     <Link className="nav-link" to="/login">Iniciar Sesión</Link>
                   </li>
                 </>
