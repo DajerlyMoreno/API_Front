@@ -15,7 +15,7 @@ const EmployeeForm = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`${process.env.REACT_APP_API_URL}/employees/${id}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/employees/find/${id}`)
         .then(response => setEmployee(response.data))
         .catch(error => console.error(error));
     }

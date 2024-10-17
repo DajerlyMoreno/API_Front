@@ -55,7 +55,7 @@ const EmployeesList = () => {
               <tr key={employee._id}>
                 <td>
                   <Link 
-                    to={`/employee/find/${employee._id}`} 
+                    to={`/employees/${employee._id}`}
                     className="text-decoration-none text-dark">
                     {employee.name}
                   </Link>
