@@ -79,6 +79,10 @@
   font-size: 1.5em;
 }
 
+.custom-btn-width {
+  max-width: 200px;
+  width: 100%;
+}
 
 @media (max-width: 768px) {
   .sidebar {

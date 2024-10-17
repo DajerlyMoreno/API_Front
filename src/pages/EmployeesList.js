@@ -38,10 +38,7 @@ const EmployeesList = () => {
 
   return (
     <div className="container mt-4">
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1 className="text-center">Empleados</h1>
-        <Link to="/employees/create" className="btn btn-success">Agregar Empleado</Link>
-      </div>
+      
 
       <div className="table-responsive">
         <table className="table table-striped table-bordered table-hover">
@@ -63,7 +60,7 @@ const EmployeesList = () => {
                     className="text-decoration-none text-dark">
                     {employee.name}
                   </Link>
-                </td>
+                </td> 
                 <td>{employee.email}</td>
                 <td>{employee.phone}</td>
                 <td>{employee.salary}</td>
