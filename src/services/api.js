@@ -14,6 +14,10 @@ export const createEmployee = async (employeeData) => {
   return await axios.post(`${API_URL}/employees`, employeeData);
 };
 
+export const updateEmployee = async (employeeData) => {
+  return await axios.put(`${API_URL}/employees`, employeeData);
+};
+
 export const getDepartments = async () => {
   return await axios.get(`${API_URL}/departments`);
 };
