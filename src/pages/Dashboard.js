@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import EmployeesList from './EmployeesList';
 import '../styles/Dashboard.css';
@@ -28,6 +29,7 @@ const Dashboard = () => {
         return <h2>Selecciona una opción del menú</h2>;
     }
   };
+
 
   return (
     <div className="dashboard-container">

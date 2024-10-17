@@ -1,4 +1,3 @@
-/* Estilos base */
 .dashboard-container {
   display: flex;
   height: 100vh;
@@ -32,7 +31,7 @@
 
 .sidebar nav ul li {
   display: flex;
-  justify-content: flex-start; /* Alinea el texto a la izquierda */
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 20px;
   cursor: pointer;
@@ -45,11 +44,11 @@
   border-radius: 5px;
 }
 
-.sidebar nav ul li i, /* Para los íconos */
+.sidebar nav ul li i, 
 .sidebar nav ul li svg {
-  position: absolute;  /* Posiciona el icono de forma absoluta */
-  right: 0;  /* Alinea el icono a la derecha del sidebar */
-  margin-right: 20px; /* Espacio entre el icono y el borde derecho del sidebar */
+  position: absolute;  
+  right: 0;  
+  margin-right: 20px; 
   width: 24px;
   height: 24px;
 }
@@ -81,35 +80,33 @@
 }
 
 
-
-/* Media query para pantallas pequeñas */
 @media (max-width: 768px) {
   .sidebar {
-    width: 80px;  /* Reduce el ancho del sidebar */
+    width: 80px;  
     padding: 10px;
   }
 
   .sidebar-header h2 {
-    display: none;  /* Oculta el título */
+    display: none;  
   }
 
   .menu-text {
-    display: none;  /* Oculta el texto del menú */
+    display: none; 
   }
 
   .sidebar nav ul li i,
   .sidebar nav ul li svg {
-    margin-right: 0;  /* Ajuste de margen para íconos en pantallas pequeñas */
+    margin-right: 0;  
     width: 24px;
     height: 24px;
   }
 
   .main-content {
-    padding: 10px;  /* Ajusta el padding del contenido principal */
+    padding: 10px; 
   }
 
   .header input {
-    padding: 8px;  /* Reduce ligeramente el tamaño del input */
+    padding: 8px;  
   }
 }
 
@@ -120,15 +117,16 @@
   }
 
   .sidebar nav ul li {
-    justify-content: flex-start;  /* Alinea el contenido a la izquierda */
+    justify-content: flex-start;  
   }
 
   .sidebar nav ul li i, 
   .sidebar nav ul li svg {
-    margin-right: 10px;  /* Mantiene el margen entre el ícono y el texto */
+    margin-right: 10px;  
   }
 
   .menu-text {
-    display: inline-block;  /* Asegura que el texto del menú sea visible */
+    display: inline-block;  
   }
 }
+
