@@ -15,7 +15,6 @@ function App() {
     <Router>
       <Routes>
         <Route path='/dashboard' element={<Dashboard/>}></Route>
-        <Route path="/employees" element={<EmployeesList />} /> 
         <Route path="/employees/create" element={<EmployeeForm />} />
       </Routes>
     </Router>

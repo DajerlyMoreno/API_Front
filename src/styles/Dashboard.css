@@ -1,0 +1,134 @@
+/* Estilos base */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.content {
+  background-color: #f5f6fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2e3b4e;
+  padding: 20px;
+  position: relative;
+  height: 100vh;
+  transition: width 0.3s ease;
+  color: #ffffff;
+}
+
+.sidebar-header {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  justify-content: flex-start; /* Alinea el texto a la izquierda */
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.sidebar nav ul li:hover {
+  background-color: #3a4b63;
+  border-radius: 5px;
+}
+
+.sidebar nav ul li i, /* Para los íconos */
+.sidebar nav ul li svg {
+  position: absolute;  /* Posiciona el icono de forma absoluta */
+  right: 0;  /* Alinea el icono a la derecha del sidebar */
+  margin-right: 20px; /* Espacio entre el icono y el borde derecho del sidebar */
+  width: 24px;
+  height: 24px;
+}
+
+.menu-text {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-info i {
+  font-size: 1.5em;
+}
+
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;  /* Reduce el ancho del sidebar */
+    padding: 10px;
+  }
+
+  .sidebar-header h2 {
+    display: none;  /* Oculta el título */
+  }
+
+  .menu-text {
+    display: none;  /* Oculta el texto del menú */
+  }
+
+  .sidebar nav ul li i,
+  .sidebar nav ul li svg {
+    margin-right: 0;  /* Ajuste de margen para íconos en pantallas pequeñas */
+    width: 24px;
+    height: 24px;
+  }
+
+  .main-content {
+    padding: 10px;  /* Ajusta el padding del contenido principal */
+  }
+
+  .header input {
+    padding: 8px;  /* Reduce ligeramente el tamaño del input */
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 769px) {
+  .sidebar {
+    width: 250px;
+  }
+
+  .sidebar nav ul li {
+    justify-content: flex-start;  /* Alinea el contenido a la izquierda */
+  }
+
+  .sidebar nav ul li i, 
+  .sidebar nav ul li svg {
+    margin-right: 10px;  /* Mantiene el margen entre el ícono y el texto */
+  }
+
+  .menu-text {
+    display: inline-block;  /* Asegura que el texto del menú sea visible */
+  }
+}
