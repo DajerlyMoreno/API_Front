@@ -1,48 +1,132 @@
-/* Archivo Dashboard.css */
-#wrapper {
-    display: flex;
-    width: 100%;
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.content {
+  background-color: #f5f6fa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2e3b4e;
+  padding: 20px;
+  position: relative;
+  height: 100vh;
+  transition: width 0.3s ease;
+  color: #ffffff;
+}
+
+.sidebar-header {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.sidebar nav ul li:hover {
+  background-color: #3a4b63;
+  border-radius: 5px;
+}
+
+.sidebar nav ul li i, 
+.sidebar nav ul li svg {
+  position: absolute;  
+  right: 0;  
+  margin-right: 20px; 
+  width: 24px;
+  height: 24px;
+}
+
+.menu-text {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.header input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-info i {
+  font-size: 1.5em;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;  
+    padding: 10px;
   }
-  
-  #sidebar-wrapper {
-    min-height: 100vh;
+
+  .sidebar-header h2 {
+    display: none;  
+  }
+
+  .menu-text {
+    display: none; 
+  }
+
+  .sidebar nav ul li i,
+  .sidebar nav ul li svg {
+    margin-right: 0;  
+    width: 24px;
+    height: 24px;
+  }
+
+  .main-content {
+    padding: 10px; 
+  }
+
+  .header input {
+    padding: 8px;  
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 769px) {
+  .sidebar {
     width: 250px;
-    margin-left: -250px;
-    transition: margin 0.25s ease-out;
   }
-  
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: 0;
+
+  .sidebar nav ul li {
+    justify-content: flex-start;  
   }
-  
-  #page-content-wrapper {
-    width: 100%;
-    padding: 20px;
+
+  .sidebar nav ul li i, 
+  .sidebar nav ul li svg {
+    margin-right: 10px;  
   }
-  
-  @media (min-width: 768px) {
-    #sidebar-wrapper {
-      margin-left: 0;
-    }
-  
-    #page-content-wrapper {
-      width: calc(100% - 250px);
-      padding: 20px;
-    }
+
+  .menu-text {
+    display: inline-block;  
   }
-  
-  .sidebar-heading {
-    font-size: 1.5rem;
-    padding: 1.25rem;
-  }
-  
-  .list-group-item {
-    padding: 15px;
-    font-size: 1.1rem;
-    color: #333;
-  }
-  
-  .list-group-item:hover {
-    background-color: #f8f9fa;
-  }
-  
+}
+

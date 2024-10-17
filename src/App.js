@@ -21,13 +21,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/dashboard' element={<Dashboard/>}></Route>
-        <Route path="/employees" element={<EmployeesList />} /> 
         <Route path="/employees/create" element={<EmployeeForm />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/employees/edit/:id" element={<EmployeeForm />} />
         <Route path="/departments" element={<DepartmentsList />} />
         <Route path="/departments/create" element={<DepartmentForm />} />
-
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
