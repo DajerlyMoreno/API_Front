@@ -1,0 +1,28 @@
+/* Degradado de azul a blanco */
+.navbar {
+  background: linear-gradient(90deg, #007BFF, #ffffff); /* Degradado de azul a blanco */
+  padding: 15px 20px;
+}
+
+/* Ajustes del logo y enlaces */
+.company-logo {
+  width: 50px;
+  height: auto;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  margin-left: 20px;
+  color: #333; /* Color de los enlaces */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #0056b3; /* Cambia el color cuando pasas el ratón por encima */
+}
+
+.navbar-brand img {
+  max-height: 50px;
+}
+
+
+  
