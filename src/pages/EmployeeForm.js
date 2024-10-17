@@ -13,13 +13,14 @@ const EmployeeForm = () => {
   const [departments, setDepartments] = useState([]);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
+  // Cargar departamentos
   useEffect(() => {
     const fetchDepartments = async () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_API_URL}/departments`);
-        setDepartments(response.data.data);
+        setDepartments(response.data.data); // Asume que la respuesta contiene los departamentos en "data.data"
       } catch (error) {
         console.error("Error al cargar los departamentos:", error);
         setError("Error al cargar la lista de departamentos.");
@@ -29,6 +30,7 @@ const EmployeeForm = () => {
     fetchDepartments();
   }, []);
 
+  // Manejar envío del formulario
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -40,7 +42,7 @@ const EmployeeForm = () => {
       salary,
       department
     };
-    
+
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/employees`, newEmployee);
 
@@ -163,4 +165,3 @@ const EmployeeForm = () => {
 };
 
 export default EmployeeForm;
-

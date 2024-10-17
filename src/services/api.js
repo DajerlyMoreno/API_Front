@@ -29,3 +29,4 @@ export const getDepartmentById = async (id) => {
 export const createDepartment = async (departmentData) => {
   return await axios.post(`${API_URL}/departments`, departmentData);
 };
+
