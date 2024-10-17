@@ -13,7 +13,8 @@ import EmployeeDetail from './pages/EmployeeDetail';
 import DepartmentsList from './pages/DepartmentsList';
 import DepartmentForm from './pages/DepartmentForm';
 import DepartmentEditForm from './pages/DepartmentEditForm';
-//import DepartmentDetail from './pages/DepartmentDetail';
+import DepartmentDetail from './pages/DepartmentDetail';
+import DepartmentDelete from './pages/DepartmentDelete';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
         <Route path="/departments/edit/:id" element={<DepartmentEditForm />} />
         <Route path="/departments" element={<DepartmentsList />} />
         <Route path="/departments/create" element={<DepartmentForm />} />
+        <Route path="/departments/:id" element={<DepartmentDetail />} />
+        <Route path="/departments/delete/:id" element={<DepartmentDelete />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
         </Routes>
