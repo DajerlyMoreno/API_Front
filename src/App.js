@@ -5,8 +5,6 @@ import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
-import Dashboard from './pages/Dashboard';
-
 import EmployeesList from './pages/EmployeesList';
 import EmployeeForm from './pages/EmployeeForm';
 //import EmployeeDetail from './pages/EmployeeDetail';

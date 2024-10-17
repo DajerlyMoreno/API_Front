@@ -15,7 +15,7 @@ const Home = () => {
 
         {/* Columna para la imagen */}
         <div className="col-md-6 text-center">
-          <img src="/assets/company-image.jpg" alt="Empresa Ficticia" className="img-fluid" />
+          <img src="/assets/logo.jpg" alt="Empresa Ficticia" className="img-fluid" />
         </div>
       </div>
     </div>
